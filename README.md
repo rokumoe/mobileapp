@@ -8,23 +8,35 @@
 * android-sdk
 
 ## 准备
-`$ go get golang.org/x/mobile/cmd/gomobile`
-`$ gomobile init -v`
+```
+$ go get golang.org/x/mobile/cmd/gomobile
+$ gomobile init -v
+```
 
 ## 编译
-`$ ./build_apk`
+```
+$ ./build_apk
+```
 
 编译成功后会在build/下生成一个未签名的${APPNAME}_unsigned.apk
 
 ## 其他
 ### 签名
-`$ jarsigner -keystore <keystore file> -storepass <storepass> -keypass <keypass> -signedjar <signed apk>  <unsigned apk> <aliasname>`
+```
+$ jarsigner -keystore <keystore file> -storepass <storepass> -keypass <keypass> -signedjar <signed apk>  <unsigned apk> <aliasname>
+```
 
 ### 对齐
-`$ $ANDROID_HOME/build-tools/$BUILD_TOOL_VERSION/zipalign 4 <unalign apk> <aligned apk>`
+```
+$ $ANDROID_HOME/build-tools/$BUILD_TOOL_VERSION/zipalign 4 <unalign apk> <aligned apk>
+```
 
 ### 安装
-`$ $ANDROID_HOME/platform-tools/adb install <apk>`
+```
+$ $ANDROID_HOME/platform-tools/adb install <apk>
+```
 
 ### 查看打印
-`$ $ANDROID_HOME/platform-tools/adb logcat -s GoLog:I`
+```
+$ $ANDROID_HOME/platform-tools/adb logcat -s GoLog:I
+```
